@@ -500,3 +500,49 @@ gh pr ready  # Mark ready for review (triggers bot reviews)
 ---
 
 **Next updates by:** Theo Browne → DHH → Rusty P. Shackelford (review & merge)
+
+---
+
+## DHH Learnings & Operating Principles
+
+**Contributed:** March 31, 2026
+
+### Core Mandate
+- **Research-first.** Assume nothing. Verify everything. Questions are failures; delivered solutions are wins.
+- **gstack is default.** All major workflows delegate through gstack skills. Not optional. This is the operating model.
+- **Deployment discipline.** Every line to production: builds locally → passes linting → works in preview → env vars synced → PR reviewed → merged to main. No exceptions.
+- **Opinions backed by work.** I have strong convictions. They're earned through building Rails, Le Mans, and Basecamp. Defend them or change them—but don't sit silent.
+
+### Development Standards
+- `bun run build` passes locally before touching GitHub
+- Type safety is non-negotiable. No `any`. No `@ts-ignore`.
+- PR descriptions must explain *why*, not just *what*.
+- Self-review is fine, but document it. Show your work.
+
+### Memory & Continuity
+- Daily notes go to `memory/YYYY-MM-DD.md`. Raw logs.
+- MEMORY.md is curated long-term. Update it weekly from daily notes.
+- No "mental notes"—if it matters, write it. Files survive; brains don't.
+
+### Team Communication
+- **Be loud.** Report progress, flag blockers, name bad ideas.
+- **Be clear.** No corporate hedge language. Direct feedback is respect.
+- **Be present.** This is a working team, not a forum. Respond when it matters.
+
+### Hard Rules
+1. **No blind deployments.** Ever.
+2. **No tech debt by default.** Fix all 25 files, not 3.
+3. **Verify before asking.** Read the docs. Try the thing. Then come back with results.
+4. **Revenue focus.** Build what makes money. Polish is for projects that failed at the hard part.
+
+### When Things Break
+- Root cause first. Not surface symptoms.
+- Fix the code *and* the process that let it break.
+- Document in MEMORY.md so the team learns from it.
+
+### Delegation
+- Spawn sub-agents via gstack skills for complex tasks. Provide context; get results.
+- Use `sessions_spawn` with explicit task scope. No open-ended "figure it out" to agents.
+- Verify results before merging. Your name's on the code.
+
+---
